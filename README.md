@@ -1,2 +1,2 @@
 # Gizi_Guru_APP
-MD GiziGuru APP
+MD GiziGuru APPS
