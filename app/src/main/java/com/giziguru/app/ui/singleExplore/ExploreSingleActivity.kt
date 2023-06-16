@@ -32,6 +32,7 @@ class ExploreSingleActivity : AppCompatActivity(), SingleExploreAdapter.OnItemCl
     private var selectedMealId: String? = null
     private var selectedMealName: String? = null
     private var selectedMealValue: String? = null
+    private var serveValue: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,11 +61,19 @@ class ExploreSingleActivity : AppCompatActivity(), SingleExploreAdapter.OnItemCl
         })
 
         binding.btnExploreAddMeals.setOnClickListener {
-            val serve = binding.serveValue.text.toString().toInt()
+            val serveText = binding.serveValue.text.toString()
+
+            if (serveText.isNotBlank()) {
+                val serve = serveText.toInt()
+                serveValue = serve
+            } else {
+                Toast.makeText(this, "Serve value is 1", Toast.LENGTH_SHORT).show()
+            }
+
             startActivity(intent)
 
             val yourMealsResponse =
-                YourMealsResponse(selectedMealId, serve, selectedMealName, selectedMealValue)
+                YourMealsResponse(selectedMealId, serveValue, selectedMealName, selectedMealValue)
 
             val intent = Intent(this, AddMealsActivity::class.java)
             intent.putExtra("yourMealsResponse", yourMealsResponse)

@@ -34,6 +34,8 @@ class AddMealsActivity : AppCompatActivity() {
     private lateinit var adapter: YourMealsAdapter
     private var yourMealsResponse: YourMealsResponse? = null
 
+    private val TITLE_KEY = "title"
+    private val DATE_KEY = "date"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +77,20 @@ class AddMealsActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(TITLE_KEY, binding.addMealsTitle.text.toString())
+        outState.putString(DATE_KEY, binding.addMealsDate.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val savedTitle = savedInstanceState.getString(TITLE_KEY)
+        val savedDate = savedInstanceState.getString(DATE_KEY)
+        binding.addMealsTitle.setText(savedTitle)
+        binding.addMealsDate.setText(savedDate)
     }
 
     private fun doAddMeals() {
