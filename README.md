@@ -1,4 +1,4 @@
-# Gizi_Guru_APP
+# GiziGuru APP
 <h2 align="center">GiziGuru Aplication</h2>
 
 <br/>
@@ -10,7 +10,7 @@
 
 
 #### Installation
-1. Download the APK Files [here](https://docs.google.com/document/d/1rSnmQmTlcezDIS4K_sir76YfgV7ltysov2vbg4ArvSo/edit).
+1. Download the APK Files [here](https://drive.google.com/file/d/1508BSha0LK1RfWCtldYRFmEY31QQz-Fl/view?usp=sharing).
 2. Install APK FIles (Allow permission install from Unknown Source).
 
 #### How to use
