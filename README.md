@@ -15,6 +15,6 @@
 
 #### How to use
 1. Open App.
-2. setelah mulai aplikasi anda akan masuk ke halaman login, silahkan login terlebih dahulu. jika tidak ada akun silahkan register terlebih dahulu
-3.  if so, you will enter the main page and can try some of the main features such as add meals and image recognition.
+2. After starting the application you will enter the login page, please login first. if there is no account please register first
+3. if so, you will enter the main page and can try some of the main features such as add meals and image recognition.
 <br/>
