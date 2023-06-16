@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/white"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9594937" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="16dp" />
+
+        <ImageView
+            android:id="@+id/history_Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_info_details"
+            app:tint="@color/black"
+            android:contentDescription="@string/meals_icons" />
+
+        <TextView
+            android:id="@+id/history_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/meals_name"
+            style="@style/default_text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/history_Image"
+            app:layout_constraintStart_toEndOf="@+id/history_Image"
+            app:layout_constraintTop_toTopOf="@+id/history_Image"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            style="@style/default_text"
+            app:layout_constraintStart_toStartOf="@+id/history_name"
+            app:layout_constraintTop_toBottomOf="@+id/history_name"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/total_cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/no_value"
+            android:textSize="12sp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/history_Image"
+            app:layout_constraintEnd_toStartOf="@+id/dropdown_icon"
+            app:layout_constraintTop_toTopOf="@+id/history_Image"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/dropdown_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/history_date"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/history_name"
+            app:layout_constraintTop_toTopOf="@+id/history_name"
+            app:srcCompat="@drawable/baseline_keyboard_arrow_down"
+            app:tint="@color/black"
+            android:contentDescription="@string/icon_dropdown" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#CECECE"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/history_name" />
+
+        <ImageView
+            android:id="@+id/bullet_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/protein"
+            app:layout_constraintStart_toStartOf="@+id/history_name"
+            app:layout_constraintTop_toTopOf="@+id/protein"
+            app:srcCompat="@android:drawable/presence_invisible"
+            app:tint="@color/light_gray"
+            android:contentDescription="@string/icon_bullet" />
+
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/protein"
+            style="@style/default_text"
+            app:layout_constraintStart_toEndOf="@id/bullet_1"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/protein_value"
+            style="@style/default_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_value"
+            app:layout_constraintBottom_toBottomOf="@+id/protein"
+            app:layout_constraintEnd_toEndOf="@id/total_cal"
+            app:layout_constraintTop_toTopOf="@+id/protein" />
+
+
+        <ImageView
+            android:id="@+id/bullet_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/carbs"
+            app:layout_constraintStart_toStartOf="@+id/bullet_1"
+            app:layout_constraintTop_toTopOf="@+id/carbs"
+            app:srcCompat="@android:drawable/presence_invisible"
+            app:tint="@color/light_gray"
+            android:contentDescription="@string/icon_bullet" />
+
+        <TextView
+            android:id="@+id/carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/carbs"
+            style="@style/default_text"
+            app:layout_constraintStart_toStartOf="@id/protein"
+            app:layout_constraintTop_toBottomOf="@+id/protein" />
+
+        <TextView
+            android:id="@+id/carbs_value"
+            style="@style/default_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_value"
+            app:layout_constraintBottom_toBottomOf="@+id/carbs"
+            app:layout_constraintEnd_toEndOf="@id/protein_value"
+            app:layout_constraintTop_toTopOf="@+id/carbs" />
+
+        <ImageView
+            android:id="@+id/bullet_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/fat"
+            app:layout_constraintStart_toStartOf="@+id/bullet_2"
+            app:layout_constraintTop_toTopOf="@+id/fat"
+            app:srcCompat="@android:drawable/presence_invisible"
+            app:tint="@color/light_gray"
+            android:contentDescription="@string/icon_bullet" />
+
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/fat"
+            style="@style/default_text"
+            app:layout_constraintStart_toStartOf="@id/carbs"
+            app:layout_constraintTop_toBottomOf="@+id/carbs"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4" />
+
+        <TextView
+            android:id="@+id/fat_value"
+            style="@style/default_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_value"
+            app:layout_constraintBottom_toBottomOf="@+id/fat"
+            app:layout_constraintEnd_toEndOf="@id/carbs_value"
+            app:layout_constraintTop_toTopOf="@+id/fat" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/card_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="view3, bullet_1, protein, protein_value, bullet_2, carbs, carbs_value, bullet_3, fat, fat_value"
+            tools:visibility="gone" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

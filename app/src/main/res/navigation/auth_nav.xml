@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.giziguru.ui.LoginFragment"
+        android:name="com.giziguru.app.ui.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.giziguru.ui.RegisterFragment"
+        android:name="com.giziguru.app.ui.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action

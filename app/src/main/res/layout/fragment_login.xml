@@ -3,52 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.LoginFragment">
+    tools:context=".ui.login.LoginFragment">
+
+    <ImageView
+        android:id="@+id/login_img"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_img"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/login_image" />
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Login"
+        android:layout_below="@+id/login_img"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="24dp"
+        android:text="@string/getting_started"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTextView"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Username"
-        android:inputType="text" />
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/please_sign_in_to_continue"
+        style="@style/default_text" />
 
-    <EditText
-        android:id="@+id/passwordEditText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/usernameEditText"
+        android:layout_below="@id/subtitleTextView"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:autofillHints="username" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameInputLayout"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:autofillHints="password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordEditText"
-        android:layout_margin="16dp"
-        android:text="Register" />
+        android:layout_below="@id/passwordInputLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="24sp"
+        android:text="@string/sign_in" />
 
     <TextView
         android:id="@+id/registerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginButton"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="REGISTER"/>
+        android:text="@string/don_t_have_an_account_sign_up_here" />
 
 </RelativeLayout>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/green"
+        android:layout_marginHorizontal="24dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/your_daily"
+                style="@style/default_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="top"
+                android:text="@string/your_dailyCalories" />
+
+            <LinearLayout
+                android:id="@+id/nutrition_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/your_daily"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/water" />
+
+                <TextView
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/protein" />
+
+                <TextView
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/carbs" />
+
+                <TextView
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nutrition_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nutrition_name"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/water_value"
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_value"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/protein_value"
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_value"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/carb_value"
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_value"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fat_value"
+                    style="@style/default_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_value"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/percentage_circle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/circle_daily"
+                    android:contentDescription="@string/percentage_fulled" />
+
+                <RelativeLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/percentage_text"
+                        style="@style/default_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/percentage_fulled"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_addMeals"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/add_meals"
+                    android:contentDescription="@string/icon_addmeals" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_nmeals"
+            android:textAlignment="center"
+            style="@style/default_text"
+            app:layout_constraintTop_toBottomOf="@id/cv_addMeals"
+            app:layout_constraintStart_toStartOf="@id/cv_addMeals"
+            app:layout_constraintEnd_toEndOf="@id/cv_addMeals" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_recipeMeals"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginEnd="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/recipe_meals"
+                    android:contentDescription="@string/icon_recipe" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recipe_nmeals"
+            android:textAlignment="center"
+            style="@style/default_text"
+            app:layout_constraintTop_toBottomOf="@id/cv_recipeMeals"
+            app:layout_constraintStart_toStartOf="@id/cv_recipeMeals"
+            app:layout_constraintEnd_toEndOf="@id/cv_recipeMeals" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/meal_history" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_recycler"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        tools:listitem="@layout/history_card" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/recommended_meals" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/suggestion_recycler"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        tools:listitem="@layout/suggestion_card" />
+</LinearLayout>
