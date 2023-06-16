@@ -1,7 +1,7 @@
 # GiziGuru APP
 <h2 align="center">GiziGuru Aplication</h2>
 
-<img src="MD/Design/Design.png" alt="Banner" width="3200">
+<img src="Design/Design.png" alt="Banner" width="3200">
 
 <br/>
 
